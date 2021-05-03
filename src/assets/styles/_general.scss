@@ -1,6 +1,7 @@
 $color-claro: #fff;
 $color-oscuro: rgb(0, 0, 0);
 $fuente1: "Open Sans", sans-serif;
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 * {
   box-sizing: border-box;
@@ -15,4 +16,12 @@ body {
 }
 html {
   font-size: 62.5%;
+}
+.dark {
+  background-color: $color-oscuro;
+  color: $color-claro;
+}
+.light {
+  background-color: $color-claro;
+  color: $color-oscuro;
 }

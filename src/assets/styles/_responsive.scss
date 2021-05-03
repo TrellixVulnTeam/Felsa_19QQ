@@ -1,0 +1,106 @@
+@mixin media($breakpoint) {
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-s {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-m {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-l {
+    @media only screen and (min-width: 1480px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-xl {
+    @media only screen and (min-width: 1780px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile-only {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-p-only {
+    @media only screen and (min-width: 768px) and (max-width: 992px) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-l-only {
+    @media only screen and (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-s-only {
+    @media only screen and (min-width: 768px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-m-only {
+    @media only screen and (min-width: 1200px) and (max-width: 1480px) {
+      @content;
+    }
+  }
+}
+
+@include media(mobile-only) {
+  .Characters {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  .card {
+    float: left;
+    padding: 0 1.7rem;
+    width: auto;
+    height: auto;
+  }
+  .imagen {
+    width: 90%;
+    margin-left: 1rem;
+  }
+
+  .data {
+    width: 100%;
+    transform: none;
+    transition: none;
+    .content {
+      padding: 1em;
+      position: relative;
+      z-index: 1;
+      img {
+        width: auto;
+      }
+    }
+  }
+  .author {
+    font-size: 12px;
+  }
+  .title {
+    margin-top: 10px;
+  }
+  .text {
+    margin: 0;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked + .menu-content {
+    transform: none;
+  }
+  .wrapper {
+    background-color: $color-claro;
+    min-height: 510px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 19px 38px rgba($color-oscuro, 0.3),
+      0 15px 12px rgba($color-oscuro, 0.2);
+    &:hover {
+      .data {
+        transform: none;
+      }
+    }
+  }
+}

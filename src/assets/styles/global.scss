@@ -1,8 +1,5 @@
 @import "./general";
 @import "./card";
 
-.Characters {
-  width: 100%;
-  height: auto;
-  background-color: $color-claro;
-}
+@import "./wrapper";
+@import "./responsive";

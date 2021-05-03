@@ -1,22 +1,20 @@
-import React,{useState} from 'react'
+import React,{useContext} from 'react'
+import ThemeContext from '../context/ThemeContext'
 
-const Header =() => {
-    const [darkmode, setDarkmode] = useState(false);
+const Header =(props) => {
+    const {darkmode, setDarkmode} = useContext(ThemeContext);
+
+
+
     const handleClick = () =>{
-        if(darkmode === true ){
-            setDarkmode(false)
-            console.log(darkmode)
-        }else{
-            setDarkmode(true)
-            console.log(darkmode)
-
-        }
+        darkmode === 'light' ? setDarkmode('dark') : 
+        darkmode === 'dark' ? setDarkmode('light') : setDarkmode('dark')
     }
     return (
-        <div>
-            <h1>reacthooks {darkmode}</h1>
-            <button type="button" onClick={handleClick}>expichame </button>
+        <div className={props.dark}> 
+            <h1  >reacthooks </h1>
 
+            <button type="button" onClick={handleClick}>expichame </button>
         </div>
     )
 }
