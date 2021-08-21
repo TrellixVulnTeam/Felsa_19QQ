@@ -1,13 +1,13 @@
 import React from 'react'
-import Header from '../components/Header'
-import Characters from '../components/Characters'
+import Header from '../components/Header/Header'
+import Inicio from '../components/Inicio/Index'
 import '../assets/styles/global.scss'
 
 const Home =()=> {
     return (
         <React.Fragment>
-                <Header/>
-                <Characters />
+            <Header/>
+            <Inicio />
         </React.Fragment>
     )
 }
