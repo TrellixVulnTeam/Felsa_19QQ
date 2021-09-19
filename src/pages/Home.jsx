@@ -1,13 +1,14 @@
 import React from 'react'
-import Header from '../components/Header/Header'
+import Layout from '../components/Layout/Layout'
 import Inicio from '../components/Inicio/Index'
 import '../assets/styles/global.scss'
 
 const Home =()=> {
     return (
         <React.Fragment>
-            <Header/>
-            <Inicio />
+            <Layout>
+                <Inicio />
+            </Layout>
         </React.Fragment>
     )
 }

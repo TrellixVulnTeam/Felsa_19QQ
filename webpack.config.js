@@ -2,16 +2,19 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
-  entry: {
-    main: './src/index.js'},
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    path: path.resolve(__dirname, 'build'),
+    filename: './build/[name].js',
   },
   resolve: {
     extensions: ['.js', '.jsx']
+  },
+  mode: 'production',
+  optimization: {
+    minimizer: [new TerserPlugin({ /* additional options here */ })],
   },
   module: {
     rules: [
@@ -44,7 +47,7 @@ module.exports = {
       filename: './index.html'
     }),
     new MiniCssExtractPlugin({
-        filename: '[name].css'
+        filename: './build/[name].css'
     }),
     new CleanWebpackPlugin()
   ],

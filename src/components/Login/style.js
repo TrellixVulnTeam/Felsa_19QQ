@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+import { css } from 'styled-components';
 
+import {Link} from 'react-router-dom'
 export const FaceApp = styled.div`
     width: 100%;
     height: 5rem;
@@ -21,7 +22,7 @@ export const FaceApp = styled.div`
     
 
 `
-export const Form = styled.main`
+export const Form = styled.form`
     width: 100%;
     height: 30vh;
     font-size: 1.5rem;
@@ -41,25 +42,30 @@ export const Form = styled.main`
         border-radius: 0.6rem;
         margin-bottom: 0.8rem;
     }
+   
 
 `
-export const NavLink = styled(Link)`
+export const NavLink = styled.button`
   width: 94%;
-  text-align: center;
   height: 4rem;
   line-height: 4rem;
   margin-top: 1rem;
-  background-color: #1877f2;
-  color: white;
   font-size: 1.7rem;
+  background-color: #1877f2;
+  text-align: center;
   font-weight: bold;
   text-decoration: none;
+  border: none;
   border-radius: 0.4rem;
   color: #fff;
   &:hover {
     color: red;
     background: blue;
   }
+  ${props => props.ready  === false && css `
+       cursor: not-allowed;
+       pointer-events: none;
+ ` }
 `;
 export const Lenguages = styled.div`
   display: flex;
@@ -84,4 +90,15 @@ font-size: 1.2rem;
   p{
     margin-top:4rem;
   };
+`
+
+
+export const Redirect  = styled(Link)`
+display: flex;
+justify-content: center;
+
+width: auto;
+color: white;
+text-decoration: none;
+
 `

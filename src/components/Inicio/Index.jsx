@@ -9,7 +9,7 @@ const Inicio = () => {
         <MainLog >
 
             <Fondo > 
-                    <Logo src={midLogo}alt="" />
+                    <Logo src={midLogo} alt="" />
                     <NavLink to="/login"> Iniciar Sesión</NavLink>
                     {/* <NavLink> Registrarse</NavLink> */}
 

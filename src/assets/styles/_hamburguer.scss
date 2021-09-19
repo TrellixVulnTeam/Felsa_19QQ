@@ -1,4 +1,4 @@
-$color-fondo1: #491c09;
+$color-fondo1: #1877f2;
 $color-claro: #fff;
 $color-oscuro: black;
 
@@ -64,7 +64,7 @@ $color-oscuro: black;
   }
   .menuppal {
     display: none;
-    background-color: rgba(73, 28, 9, 0.79);
+    background-color: #1876f254;
     bottom: 0;
     height: 100vh;
     left: 0;
@@ -75,15 +75,20 @@ $color-oscuro: black;
     transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
     width: 100%;
   
-    z-index: 1001;
   }
   
   .menuppal.is_active {
     display: flex;
     transform: translate3d(0px, 0px, 0px);
+    overflow: scroll;
+    position: fixed;
+
+    z-index: 5;
+
   }
   .menuppal ul {
-    width: 90vw;
+    width: 100vw;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,8 +109,8 @@ $color-oscuro: black;
   }
   .menuppal ul li a {
     text-decoration: none;
-    color: $color-claro;
-    margin: 0;
+    color: $color-oscuro;
+    margin: 0 auto;
   }
   .menuppal ul li a:hover {
     text-decoration: none;
